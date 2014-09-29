@@ -1,0 +1,36 @@
+{
+  "name": "hexadb",
+  "version": "0.0.0",
+  "description": "Hexastore graph database ontop a LevelUp interface",
+  "main": "lib/hexadb",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhermsmeier/node-hexadb.git"
+  },
+  "keywords": [
+    "hexastore",
+    "graph",
+    "database",
+    "db",
+    "rdf"
+  ],
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jhermsmeier/node-hexadb/issues"
+  },
+  "homepage": "https://github.com/jhermsmeier/node-hexadb",
+  "dependencies": {
+    "level-prebuilt": "^0.18.0",
+    "msgpack5": "^1.1.1"
+  },
+  "devDependencies": {
+    "tape": "^3.0.0"
+  }
+}
