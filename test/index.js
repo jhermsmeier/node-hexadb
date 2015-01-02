@@ -1,13 +1,13 @@
-var LevelDB = require( 'level-prebuilt' )
-var Graph = require( '..' )
+var MemDB = require( 'memdb' )
+var HexaDB = require( '..' )
 var tape = require( 'tape' )
 
-var db = new LevelDB( __dirname + '/graph' )
-var graph = new Graph( db )
+var db = new MemDB()
+var graph = new HexaDB( db )
 
 tape( 'HexaDB', function( t ) {
   
-  var triple = new Graph.Triple( 'a', 'b', 'c' )
+  var triple = [ 'a', 'b', 'c' ]
   
   t.test( 'graph#put()', function( t ) {
     t.plan( 1 )
@@ -18,7 +18,15 @@ tape( 'HexaDB', function( t ) {
   
   t.test( 'graph#get()', function( t ) {
     t.plan( 1 )
-    graph.get( new Graph.Triple( 'a', 'b' ), function( error, data ) {
+    graph.get( [ 'a', 'b' ], function( error, data ) {
+      t.error( error, 'get it out' )
+      console.log( 'data', data )
+    })
+  })
+  
+  t.test( 'graph#get()', function( t ) {
+    t.plan( 1 )
+    graph.get( [ 'a', null, 'c' ], function( error, data ) {
       t.error( error, 'get it out' )
       console.log( 'data', data )
     })
