@@ -44,6 +44,16 @@ describe( 'Primitive Operations', function() {
     })
   })
   
-  it( 'db#update()' )
+  it( 'db#update([ a, b, c ], [ a, b, abc ])', function( done ) {
+    db.update([ 'a', 'b', 'c' ], [ 'a', 'b', 'abc' ], function( error ) {
+      assert.ifError( error )
+      db.get([ 'a', 'b' ], function( error, data ) {
+        assert.ifError( error )
+        assert.equal( data.length, 1 )
+        assert.equal( data[0].object, 'abc' )
+        done()
+      })
+    })
+  })
   
 })
