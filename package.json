@@ -27,10 +27,13 @@
   },
   "homepage": "https://github.com/jhermsmeier/node-hexadb",
   "dependencies": {
-    "level-prebuilt": "^0.18.0",
-    "msgpack5": "^1.1.1"
+    "async": "~0.9.0",
+    "bloodline": "~1.0.0",
+    "level-sublevel": "~6.4.0",
+    "msgpack5": "~1.3.5"
   },
   "devDependencies": {
+    "memdb": "~0.2.0",
     "tape": "^3.0.0"
   }
 }
