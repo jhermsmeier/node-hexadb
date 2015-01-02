@@ -1,50 +1,36 @@
-var MemDB = require( 'memdb' )
 var HexaDB = require( '..' )
-var tape = require( 'tape' )
+var assert = require( 'assert' )
 
-var db = new MemDB()
-var graph = new HexaDB( db )
+var db = new HexaDB( require( 'memdb' )() )
 
-tape( 'HexaDB', function( t ) {
+describe( 'Primitive Operations', function() {
   
-  var triple = [ 'a', 'b', 'c' ]
+  it( 'db#put( [ a, b, c ] )', function( done ) {
+    db.put([ 'a', 'b', 'c' ], done )
+  })
   
-  t.test( 'graph#put()', function( t ) {
-    t.plan( 1 )
-    graph.put( triple, function( error ) {
-      t.error( error, 'put it in' )
+  it( 'db#put( [ a, f, c ] )', function( done ) {
+    db.put([ 'a', 'f', 'c' ], done )
+  })
+  
+  it( 'db#get( [ a, null, c ] )', function( done ) {
+    db.get([ 'a', null, 'c' ], function( error, data ) {
+      assert.equal( data.length, 2 )
+      assert.equal( data[0].predicate, 'f' )
+      assert.equal( data[1].predicate, 'b' )
+      done()
     })
   })
   
-  t.test( 'graph#get()', function( t ) {
-    t.plan( 1 )
-    graph.get( [ 'a', 'b' ], function( error, data ) {
-      t.error( error, 'get it out' )
-      console.log( 'data', data )
+  it( 'db#get( [ a, b, c ] )', function( done ) {
+    db.get([ 'a', 'b', 'c' ], function( error, data ) {
+      assert.equal( data.length, 1 )
+      assert.equal( data[0].predicate, 'b' )
+      done()
     })
   })
   
-  t.test( 'graph#get()', function( t ) {
-    t.plan( 1 )
-    graph.get( [ 'a', null, 'c' ], function( error, data ) {
-      t.error( error, 'get it out' )
-      console.log( 'data', data )
-    })
-  })
-  
-  t.test( 'graph#delete()', function( t ) {
-    t.plan( 1 )
-    graph.delete( triple, function( error ) {
-      t.error( error, 'drop it off' )
-    })
-  })
-  
-  t.test( 'graph#get()', function( t ) {
-    t.plan( 1 )
-    graph.get( null, function( error, data ) {
-      t.error( error, 'get nothing out' )
-      console.log( 'data', data )
-    })
-  })
+  it( 'db#delete()' )
+  it( 'db#update()' )
   
 })
