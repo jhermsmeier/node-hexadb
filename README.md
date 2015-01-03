@@ -6,5 +6,5 @@
 ## Install via [npm](https://npmjs.org)
 
 ```sh
-$ npm install jhermsmeier/node-hexadb
+$ npm install hexadb
 ```
