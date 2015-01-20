@@ -66,21 +66,23 @@ describe( 'Search', function() {
       .on( 'readable', function() {
         var value = null
         while( value = this.read() ) {
-          console.log( value )
           result.push( value )
         }
       })
       .on( 'end', function() {
-        // TODO: Check result
+        // console.log( 'RESULT', result )
+        assert.equal( result.length, 1 )
+        assert.deepEqual( result.shift(), { x: 'daniele', y: 'marco' } )
         done()
       })
     
   })
   
-  it.skip( 'db#search()', function( done ) {
+  it( 'db#search()', function( done ) {
     
     db.search( query, function( error, result ) {
-      // TODO: Check result
+      assert.equal( result.length, 1 )
+      assert.deepEqual( result.shift(), { x: 'daniele', y: 'marco' } )
       done( error, result )
     })
     
