@@ -71,7 +71,6 @@ var options = {
 - [update](#update)
 - [delete](#delete)
 - [search](#search)
-
 - [getStream](#getstream)
 - putStream (to be implemented)
 - updateStream (to be implemented)
