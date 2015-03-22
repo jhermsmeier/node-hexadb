@@ -1,6 +1,6 @@
 {
   "name": "hexadb",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "Hexastore graph database on top a LevelUp interface",
   "main": "lib/hexadb",
   "directories": {
