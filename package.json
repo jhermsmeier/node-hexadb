@@ -29,11 +29,11 @@
   "dependencies": {
     "async": "~0.9.0",
     "bloodline": "~1.0.0",
-    "level-sublevel": "~6.4.0",
-    "msgpack5": "~1.4.0"
+    "level-sublevel": "~6.4.6",
+    "msgpack5": "~2.0.0"
   },
   "devDependencies": {
     "memdb": "~0.2.0",
-    "mocha": "~2.1.0"
+    "mocha": "~2.2.1"
   }
 }
