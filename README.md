@@ -73,7 +73,7 @@ var options = {
 - [search](#search)
 - [getStream](#getstream)
 - [putStream](#putStream)
-- updateStream (to be implemented)
+- [updateStream](#updateStream)
 - [deleteStream](#deleteStream)
 - [searchStream](#searchstream)
 
@@ -126,13 +126,19 @@ var stream = db.getStream( pattern, options )
 #### PutStream
 
 ```js
-var stream = db.putStream( options )
+var stream = db.putStream()
+```
+
+#### UpdateStream
+
+```js
+var stream = db.updateStream()
 ```
 
 #### DeleteStream
 
 ```js
-var stream = db.deleteStream( options )
+var stream = db.deleteStream()
 ```
 
 #### SearchStream
