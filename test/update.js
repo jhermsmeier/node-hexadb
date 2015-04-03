@@ -40,6 +40,25 @@ describe( 'Update', function() {
     
   })
   
-  it( 'db#updateStream' )
+  it( 'db#updateStream', function( next ) {
+    
+    var us = db.updateStream()
+    var replace = {
+      old: [ 'jonas', 'owner', 'computer' ],
+      new: [ 'jonas', 'friend', 'computer' ],
+    }
+    
+    us.once( 'finish', function() {
+      db.get({ p: 'friend' }, function( error, result ) {
+        if( error ) return next( error )
+        assert( result.length, 2 )
+        next()
+      })
+    })
+    
+    us.write( replace )
+    us.end()
+    
+  })
   
 })

@@ -35,6 +35,21 @@ describe( 'Delete', function() {
     
   })
   
-  it( 'db#deleteStream' )
+  it( 'db#deleteStream', function( next ) {
+    
+    var ds = db.deleteStream()
+    
+    ds.once( 'finish', function() {
+      db.get({ p: 'friend' }, function( error, result ) {
+        if( error ) return next( error )
+        assert.equal( result.length, 0 )
+        next()
+      })
+    })
+    
+    ds.write( triples[1] )
+    ds.end()
+    
+  })
   
 })
