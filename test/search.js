@@ -1,7 +1,7 @@
 var HexaDB = require( '..' )
 var assert = require( 'assert' )
 
-suite( 'Search', function() {
+describe( 'Search', function() {
   
   var db = new HexaDB( require( 'memdb' )() )
   
@@ -47,7 +47,7 @@ suite( 'Search', function() {
     object: 'davide'
   }]
   
-  setup( function() {
+  before( 'prepare', function() {
     // Since we're using MemDB for testing here,
     // we omit checking for errors, or waiting for the callback
     // (we can omit checking for errors, because the primitive ops
@@ -57,7 +57,7 @@ suite( 'Search', function() {
     })
   })
   
-  test( 'db#searchStream()', function( done ) {
+  it( 'db#searchStream()', function( done ) {
     
     var result = []
     
@@ -70,6 +70,7 @@ suite( 'Search', function() {
         }
       })
       .on( 'end', function() {
+        // console.log( 'RESULT', result )
         assert.equal( result.length, 1 )
         assert.deepEqual( result.shift(), { x: 'daniele', y: 'marco' } )
         done()
@@ -77,7 +78,7 @@ suite( 'Search', function() {
     
   })
   
-  test( 'db#search()', function( done ) {
+  it( 'db#search()', function( done ) {
     
     db.search( query, function( error, result ) {
       assert.equal( result.length, 1 )

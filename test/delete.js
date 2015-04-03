@@ -1,7 +1,7 @@
 var HexaDB = require( '..' )
 var assert = require( 'assert' )
 
-suite( 'Delete', function() {
+describe( 'Delete', function() {
   
   var db = new HexaDB( require( 'memdb' )() )
 
@@ -12,16 +12,16 @@ suite( 'Delete', function() {
   },{
     subject: 'computer',
     predicate: 'friend',
-    object: 'jonas'
+    object: 'jonas',
   }]
   
-  setup( function() {
+  before( function() {
     triples.forEach( function( triple ) {
       db.put( triple, Function.prototype )
     })
   })
   
-  test( 'db#delete', function( next ) {
+  it( 'db#delete', function( next ) {
     
     db.delete( triples[0], function( error ) {
       if( error ) return next( error )
@@ -35,6 +35,6 @@ suite( 'Delete', function() {
     
   })
   
-  test( 'db#deleteStream' )
+  it( 'db#deleteStream' )
   
 })

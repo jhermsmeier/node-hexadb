@@ -1,7 +1,7 @@
 var HexaDB = require( '..' )
 var assert = require( 'assert' )
 
-suite( 'Update', function() {
+describe( 'Update', function() {
   
   var db = new HexaDB( require( 'memdb' )() )
   
@@ -15,13 +15,13 @@ suite( 'Update', function() {
     object: 'jonas',
   }]
   
-  setup( function() {
+  before( function() {
     triples.forEach( function( triple ) {
       db.put( triple, Function.prototype )
     })
   })
   
-  test( 'db#update', function( next ) {
+  it( 'db#update', function( next ) {
     
     var replacement = {
       subject: 'jonas',
@@ -40,6 +40,6 @@ suite( 'Update', function() {
     
   })
   
-  test( 'db#updateStream' )
+  it( 'db#updateStream' )
   
 })
