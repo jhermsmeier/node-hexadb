@@ -3,7 +3,7 @@
 [![npm downloads](http://img.shields.io/npm/dm/hexadb.svg?style=flat-square)](https://npmjs.com/hexadb)
 [![build status](http://img.shields.io/travis/jhermsmeier/node-hexadb.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-hexadb)
 
-## Install via [npm](https://npmjs.org)
+## Install via [npm](https://npmjs.com)
 
 ```sh
 $ npm install hexadb
