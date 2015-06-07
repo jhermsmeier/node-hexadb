@@ -73,9 +73,9 @@ var options = {
 - [delete](#delete)
 - [search](#search)
 - [getStream](#getstream)
-- [putStream](#putStream)
-- [updateStream](#updateStream)
-- [deleteStream](#deleteStream)
+- [putStream](#putstream)
+- [updateStream](#updatestream)
+- [deleteStream](#deletestream)
 - [searchStream](#searchstream)
 
 #### Get
