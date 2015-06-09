@@ -10,6 +10,31 @@
 $ npm install hexadb
 ```
 
+## Performance
+
+These are just very rough figures, obtained with the [UWN](http://www.mpi-inf.mpg.de/yago-naga/uwn/) dataset
+on an `i5-4278U @ 2.6 GHz`, running `io.js 2.2.1` on Windows 10.
+
+Read
+```
+Read 128561 triples
+Speed: 8000 triples/sec
+Speed: 0.13 ms/triple
+```
+
+Write
+```
+HDD:
+Inserted 128561 triples
+Speed: 2000 triples/sec
+Speed: 0.50 ms/triple
+
+SSD:
+Inserted 128561 triples
+Speed: 2308 triples/sec
+Speed: 0.40 ms/triple
+```
+
 ## Usage
 
 ```js
