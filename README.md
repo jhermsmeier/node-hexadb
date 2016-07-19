@@ -1,13 +1,13 @@
 # Hexa DB
-[![npm](http://img.shields.io/npm/v/hexadb.svg?style=flat-square)](https://npmjs.com/hexadb)
-[![npm](http://img.shields.io/npm/l/hexadb.svg?style=flat-square)](https://npmjs.com/hexadb)
-[![npm downloads](http://img.shields.io/npm/dm/hexadb.svg?style=flat-square)](https://npmjs.com/hexadb)
-[![build status](http://img.shields.io/travis/jhermsmeier/node-hexadb.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-hexadb)
+[![npm](https://img.shields.io/npm/v/hexadb.svg?style=flat-square)](https://npmjs.com/package/hexadb)
+[![npm](https://img.shields.io/npm/l/hexadb.svg?style=flat-square)](https://npmjs.com/package/hexadb)
+[![npm downloads](https://img.shields.io/npm/dm/hexadb.svg?style=flat-square)](https://npmjs.com/package/hexadb)
+[![build status](https://img.shields.io/travis/jhermsmeier/node-hexadb.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-hexadb)
 
 ## Install via [npm](https://npmjs.com)
 
 ```sh
-$ npm install hexadb
+$ npm install --save hexadb
 ```
 
 ## Performance
